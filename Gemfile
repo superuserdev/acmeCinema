@@ -36,6 +36,3 @@ gem "jekyll-paginate", "~> 1.1"
 
 # Added at 2018-01-25 13:37:57 -0800 by shgysk8zer0:
 gem "jekyll-watch", "~> 1.5"
-
-# Added at 2018-05-10 22:03:57 -0700 by shgysk8zer0:
-gem "listen", "~> 3.1"
