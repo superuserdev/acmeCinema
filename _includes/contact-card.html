@@ -1,0 +1,37 @@
+<div class="card shadow clearfix" itemtype="{{ include.info['@context'] | append: '/' | append: include.info['@type'] }}" itemscope="">
+	<img itemprop="image" class="inline-block" src="{{ include.info.logo.url | absolute_url }}" alt="logo" style="width: 50%" />
+	<div class="inline-block" style="50%">
+		<div itemprop="name">{{ include.info.name }}</div>
+		<a href="{{ include.info.telephone | prefix: 'tel:' }}" class="block">
+			{% include icon.html icon='call-start' %}
+			<span itemprop="telephone">{{ include.info.telephone | replace: '+', '' }}</span>
+		</a>
+		<a href="{{ include.info.email | prefix: 'mailto:' }}" class="block">
+			{% include icon.html icon='mail-unread' %}
+			<span itemprop="telephone">{{ include.info.email }}</span>
+		</a>
+		<a href="{{ include.info.url}}" class="block">
+			{% include icon.html icon='web-browser' %}
+			<span itemprop="telephone">{{ include.info.url | replace: 'http://', '' | replace: 'https://', '' }}</span>
+		</a>
+		<address itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="">
+			<div itemprop="streetAddress">{{ include.info.address.streetAddress }}</div>
+			<div>
+				<div class="clearfix">
+					<span class="float-left">{% include icon.html icon='location' %}</span>
+					<div class="float-left">
+						<span itemprop="addressLocality">{{ include.info.address.addressLocality }}</span>,
+						<span itemprop="addressRegion">{{ include.info.address.addressRegion }}</span>
+					</div>
+				</div>
+			</div>
+		</address>
+		</div>
+	</div>
+	<meta itemprop="screenCount" content="{{ include.info.screenCount }}" />
+	<meta itemprop="maximumAttendeeCapacity" content="{{ include.info.maximumAttendeeCapacity }}" />
+	<meta itemprop="smokingAllowed" content="{{ include.info.smokingAllowed }}" />
+	<meta itemprop="currenciesAccepted" content="{{ include.info.currenciesAccepted }}" />
+	<meta itemprop="paymentAccepted" content="{{ include.info.paymentAccepted }}" />
+	<meta itemprop="priceRange" content="{{ include.info.priceRange }}" />
+</div>

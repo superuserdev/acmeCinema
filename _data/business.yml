@@ -1,0 +1,35 @@
+'@type': MovieTheater
+'@context': 'http://schema.org'
+name: The Acme Cinema
+email: info@theacmecinema.com
+telephone: '+1-555-555-5555'
+url: 'https://theacmecinema.com'
+description: Lorem ipsum
+address:
+  '@type': PostalAddress
+  streetAddress: 1234 Main Blvd.
+  addressLocality: Nowhere
+  addressRegion: California
+  postalCode: 98765
+contactPoint:
+  '@type': ContactPoint
+  contactType: Customer Service
+  availableLanguage: English
+  telephone: '+1-555-555-5555'
+sameAs:
+  - 'https://facebook.com/theacmecinema'
+image:
+  '@type': ImageObject
+  url: 'http://funds.gfmcdn.com/18567838_14883315660_r.jpg'
+logo:
+  '@type': ImageObject
+  url: /img/clipart/film-star.svg
+screenCount: 1
+maximumAttendeeCapacity: 50
+smokingAllowed: false
+currenciesAccepted: USD
+paymentAccepted: cash, credit card
+priceRange: $$
+openingHours:
+  - 'Mo,Tu,We,Th,Fr 11:00-17:00'
+  - 'Sa,Su 09:00-20:00'

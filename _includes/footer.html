@@ -1,0 +1,95 @@
+<footer id="contact" class="color-alt no-text-decoration optimize-speed" role="contentinfo">
+	<div class="flex row wrap">
+		<ul class="footer-col">
+			<li>
+				<a href="{{ '/about/' | absolute_url }}" class="color-inherit">
+					{% include icon.html icon='avatar-default' class=footer-icon-class %}
+					About
+				</a>
+			</li>
+			<li>
+				<a href="{{ '/contact/' | absolute_url }}" class="color-inherit">
+					{% include icon.html icon='address-book' class=footer-icon-class %}
+					Contact
+				</a>
+			</li>
+			{% if site.feed %}
+				<li>
+					<a href="{{ site.feed.url | absolute_url}}" title="Subscribe to feed" target="_blank" class="inline-block color-inherit">
+						{% include icon.html icon="rss" class=footer-icon-class %}
+						RSS Feed
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+		<ul class="footer-col">
+			{% if site.data.business.url %}
+				<li>
+					<a href="{{ site.data.business.url }}" title="Website" itemprop="url">
+						{% include icon.html icon='web-browser' class=footer-icon-class %}
+						{{ site.data.business.url | replace: 'https://', '' | replace: 'http://', '' }}
+					</a>
+				</li>
+			{% endif %}{% if site.data.business.email %}
+				<li>
+					<a href="mailto:{{ site.data.business.email }}" title="Email" itemprop="email">
+						{% include icon.html icon='mail-unread' class=footer-icon-class %}
+						{{ site.data.business.email }}
+					</a>
+				</li>
+			{% endif %}{% if site.data.business.telephone %}
+				<li>
+					<a href="tel:{{ site.data.business.telephone }}" title="Phone" itemprop="telephone">
+						{% include icon.html icon='call-start' class=footer-icon-class %}
+						{{ site.data.business.telephone | replace: '+', '' }}
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+		<ul class="footer-col">
+			{% if site.data.social.facebook %}
+				<li class="social-link">
+					<a href="https://facebook.com/{{ site.data.social.facebook }}" class="{{ link-class }}" title="Twitter" target="_blank" rel="noopener external" itemprop="sameAs">
+						{% include icon.html icon='facebook' class=footer-icon-class %}
+						Facebook
+					</a>
+				</li>
+			{% endif %}
+			{% if site.data.social.twitter %}
+				<li class="social-link">
+					<a href="https://twitter.com/{{ site.data.social.twitter }}" class="{{ link-class }}" title="Twitter" target="_blank" rel="noopener external" itemprop="sameAs">
+						{% include icon.html icon='twitter' class=footer-icon-class %}
+						Twitter
+					</a>
+				</li>
+			{% endif %}
+			{% if site.data.social.google_plus %}
+				<li class="social-link">
+					<a href="https://plus.google.com/{{ site.data.social.google_plus }}/" class="{{ link-class }}" title="Google+" target="_blank" rel="noopener external" itemprop="sameAs">
+						{% include icon.html icon='google+' class=footer-icon-class %}
+						Google+
+					</a>
+				</li>
+			{% endif %}
+			{% if site.data.social.linkedin %}
+				<li class="social-link">
+					<a href="https://www.linkedin.com/in/{{ site.data.social.linkedin }}/" class="{{ link-class }}" title="LinkedIn" target="_blank" rel="noopener external" itemprop="sameAs">
+						{% include icon.html icon='linkedin' class=footer-icon-class %}
+						LinkedIn
+					</a>
+				</li>
+			{% endif %}
+			{% if site.data.social.youtube %}
+				<li class="social-link">
+					<a href="https://youtube.com/user/{{ site.data.social.youtube }}" class="{{ link-class }}" title="YouTube" target="_blank" rel="noopener external" itemprop="sameAs">
+						{% include icon.html icon='youtube' class=footer-icon-class %}
+						YouTube
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+	<hr />
+	<p>&copy;<time itemprop="copyrightYear"> {{ 'now' | date: "%Y" }}</time> <a href="{{ site.url | absolute_url }}">{{ site.title }}</a></p>
+	{% include business-info.html %}
+</footer>

@@ -1,0 +1,11 @@
+body > footer {
+	background: #333;
+}
+
+body > footer a {
+	color: inherit;
+}
+
+.footer-col li {
+	list-style: none;
+}

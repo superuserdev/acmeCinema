@@ -1,0 +1,3 @@
+<div class="embed-container">
+	<iframe title="{{ include.title | default: 'YouTube video player' }}" width="{{ include.width| default: 640 }}" height="{{ include.height | default: 390 }}" src="http://www.youtube-nocookie.com/embed/{{ include.id }}" frameborder="0" allowfullscreen="" crossorigin="anonymous"{% if include.itemprop %} itemprop="{{ include.itemprop }}"{% endif %}></iframe>
+</div>

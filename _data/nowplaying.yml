@@ -1,0 +1,22 @@
+- title: 'Avengers: Infinity War'
+  poster: 'https://i.imgur.com/VwlHRaR.png'
+  trailer: 'QwievZ1Tx-8'
+  genre: action
+  releaseDate: 2018-04-27
+  description: 'Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet -- the evil Thanos. On a mission to collect all six Infinity Stones, Thanos plans to use the artifacts to inflict his twisted will on reality. The fate of the planet and existence itself has never been more uncertain as everything the Avengers have fought for has led up to this moment.'
+  directors:
+    - Anthony Russo
+    - Joe Russo
+  actors:
+    - Robert Downey Jr.
+    - Chris Pratt
+    - Josh Brolin
+    - Chris Evans
+    - Chris Hemsworth
+  showtimes:
+    - '9:00'
+    - '11:00'
+    - '13:00'
+    - '15:00'
+    - '17:00'
+    - '19:00'

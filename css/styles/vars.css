@@ -1,0 +1,42 @@
+:root {
+	--desktop-rem: 1.3vw;
+	--tablet-rem: 1.5vw;
+	--mobile-rem: 3.3vw;
+
+	--font-display: optional;
+
+	/*================= Set color vars here =================*/
+	--default-color: #010101;
+	--alt-color: #FAFAFA;
+	--primary-color: #E0E0E0;
+	--link-color: var(--accent-color);
+	--accent-color: #ac2a34;
+	--accent-color-2: #7D0E17;
+	--border-color: #2D2D2D;
+	--header-bg-color: #1b5e20;
+
+	--button-background: var(--accent-color);
+	--button-active-background: var(--accent-color-2);
+	--button-disabled-background: var(--button-active-background);
+	--button-border: 1px solid #aeaeae;
+	--button-disabled-border: var(--button-border);
+	--button-active-border: var(--button-disabled-border);
+	--button-color: var(--alt-color);
+	--button-active-color: var(--button-color);
+	--button-border-radius: 4px;
+
+	/*==================== Set fonts here ====================*/
+	--main-font: 'Roboto';
+	--title-font: 'Monoton', cursive;
+	--header-font: 'Alice';
+	--article-font: 'Ubuntu';
+	--article-header-font: var(--header-font);
+
+	/*================== Animation properties ==================*/
+	--animation-stagger: 150ms;
+
+	/* ================= Syntax Highlighting ====================*/
+	--highlight-color: black;
+	--highlight-background: #efefef;
+	--highlight-literal-number-color: #CCA418;
+}

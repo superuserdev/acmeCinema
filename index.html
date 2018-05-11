@@ -1,0 +1,10 @@
+---
+title: Home
+layout: default
+---
+<section class="grid now-playing-list">
+	{% for movie in site.data.nowplaying %}
+		{% include now-playing.html movie=movie %}
+	{% endfor %}
+	{% include trailer-template.html %}
+</section>
