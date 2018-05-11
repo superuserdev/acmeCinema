@@ -11,10 +11,6 @@ layout: null
 			{% if tiles['310x310'] %}<square310x310logo src="{{ tiles['310x310'] | absolute_url }}" />{% endif %}
 			{% if tiles['310x150'] %}<wide310x150 src="{{ tiles['310x150'] | absolute_url }}" />{% endif %}
 		</tile>
-		{% if tiles.color %}
-			<TileColor>{{ tiles.color }}</TileColor>
-		{% elsif site.theme-color %}
-			<TileColor>{{ site.theme-color }}</TileColor>
-		{% endif %}
+		<TileColor>{{ tiles.color | default: site.theme-color }}</TileColor>
 	</msapplication>
 </browserconfig>
