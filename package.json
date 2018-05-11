@@ -11,11 +11,12 @@
     "lint:js": "eslint .",
     "lint:css": "stylelint css/",
     "test": "npm run lint",
+    "publish": "npm run build && JEKYLL_ENV=production bundle exec jekyll build -d /keybase/public/shgysk8zer0/kernlodge/ -b /kernlodge/",
     "build": "npm run build:icons && npm run build:css && npm run build:js",
-    "build:css": "postcss css/styles/index.css -o css/styles/index.min.css",
+    "build:css": "postcss -c postcss.config.json css/styles/index.css -o css/styles/index.min.css",
     "build:js": "webpack",
     "build:icons": "svg-sprite-generate -c img/icons.csv -o img/icons.svg",
-    "build:site": "npm run build:all && JEKYLL_ENV=production bundle exec jekyll build",
+    "build:site": "JEKYLL_ENV=production bundle exec jekyll build",
     "build:site:dev": "bundle exec jekyll build --drafts --unpublished --future --profile --trace --strict_front_matter",
     "postinstall": "npm run git:submodules && npm run build",
     "start": "npm run serve:dev",
@@ -24,15 +25,15 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/superuserdev/acmeCinema"
   },
   "author": "Chris Zuber <chris@chriszuber.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/superuserdev/acmeCinema/issues"
   },
-  "homepage": "",
+  "homepage": "https://acmecinema.netlify.com/",
   "dependencies": {
-    "node-purist": "github:shgysk8zer0/node-purist"
+    "node-purist": "^0.1.0"
   }
 }
