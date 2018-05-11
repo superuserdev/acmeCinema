@@ -1,6 +1,6 @@
 import './std-js/shims.js';
 import './std-js/deprefixer.js';
-import {$, ready, waitUntil} from './std-js/functions.js';
+import {$, ready, waitUntil, registerServiceWorker} from './std-js/functions.js';
 import * as Mutations from './std-js/mutations.js';
 import webShareApi from './std-js/webShareApi.js';
 import {
@@ -23,6 +23,8 @@ ready().then(async () =>{
 	$doc.replaceClass('no-js', 'js');
 	$doc.watch(Mutations.events, Mutations.options, Mutations.filter);
 	Mutations.init();
+
+	$('[data-service-worker]').each(el => registerServiceWorker(el.dataset.serviceWorker));
 
 	$('.trailer-dialog').on('close', event => {
 		const iframe = event.target.querySelector('iframe');
