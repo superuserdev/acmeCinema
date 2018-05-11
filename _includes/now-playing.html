@@ -2,7 +2,7 @@
 	<h2 itemprop="name">{{ include.movie.title }}</h2>
 	<meta itemprop="genre" content="{{ include.movie.genre }}" />
 	<figure class="poster-image" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
-		{% include imgur.html url=include.movie.poster sizes='(max-width: 600px) 30vw, 100vw' itemprop='url' %}
+		{% include imgur.html url=include.movie.poster sizes='(min-width: 600px) 30vw, 100vw' itemprop='url' %}
 	</figure>
 	<button type="button" data-show-trailer="{{ include.movie.trailer }}">
 		{% include icon.html icon='video' %}
