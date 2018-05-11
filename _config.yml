@@ -115,8 +115,8 @@ appicons:
   sizes: 192x192
   type: image/png
 screenshots:
-- src: 'https://i.imgur.com/uRKaQQQl.png'
-  sizes: 640x354
+- src: 'https://i.imgur.com/VKfP1KRl.png'
+  sizes: 640x295
   type: image/png
 defaults:
 - scope:
