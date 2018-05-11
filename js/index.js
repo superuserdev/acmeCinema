@@ -37,10 +37,11 @@ ready().then(async () =>{
 		const template = document.getElementById('trailer-dialog-template').content.cloneNode(true);
 		const dialog = template.querySelector('dialog');
 		const iframe = template.querySelector('iframe');
+		const src = new URL(`/embed/${event.target.dataset.showTrailer}`, 'https://www.youtube-nocookie.com');
 		event.target.disabled = true;
-		iframe.src += event.target.dataset.showTrailer;
-		$('button', template).click(() => dialog.close());
+		iframe.src = src;
 		dialog.addEventListener('close', event => event.target.remove());
+		$('button', template).click(() => dialog.close());
 		document.body.append(template);
 		await waitUntil(iframe, 'load');
 		dialog.showModal();

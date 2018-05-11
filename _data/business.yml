@@ -3,7 +3,7 @@
 name: The Acme Cinema
 email: info@theacmecinema.com
 telephone: '+1-555-555-5555'
-url: 'https://theacmecinema.com'
+url: 'https://acmecinema.netlify.com'
 description: Lorem ipsum
 address:
   '@type': PostalAddress
