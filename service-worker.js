@@ -1,6 +1,6 @@
-// 2017-11-02 16:19
+// 2018-05-10 22:46
 const config = {
-	version: 'shgysk8zer0@github.io',
+	version: 'acmecinema.netlify.com',
 	caches: [
 		// Main assets
 		'/',
@@ -8,33 +8,6 @@ const config = {
 		'/css/styles/index.min.css',
 		'/img/icons.svg',
 		'/img/favicon.svg',
-		// contact page and resume
-		'/contact/',
-		'/resume/',
-		'/about/',
-		'/portfolio/',
-		'/js/resume.js',
-		'/css/resume.css',
-
-		// Nav menu icons
-		'/img/adwaita-icons/actions/document-open-recent.svg',
-		'/img/adwaita-icons/actions/go-top.svg',
-		'/img/adwaita-icons/actions/view-pin.svg',
-		'/img/adwaita-icons/places/folder-publicshare.svg',
-		'/img/octicons/lib/svg/comment-discussion.svg',
-		'/img/octicons/lib/svg/calendar.svg',
-
-		// Logos
-		'/img/logos/super-user.svg',
-		'/img/logos/css3.svg',
-		'/img/logos/php.svg',
-		'/img/logos/svg.svg',
-		'/img/logos/facebook.svg',
-		'/img/logos/twitter.svg',
-		'/img/logos/linkedin.svg',
-		'/img/logos/google-plus.svg',
-		'/img/logos/reddit.svg',
-		'/img/logos/gmail.svg',
 
 		// Fonts
 		'/fonts/acme.woff',
