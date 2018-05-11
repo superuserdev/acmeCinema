@@ -20,7 +20,25 @@ summary[role="button"] {
 	display: list-item;
 }
 
+figure {
+	margin: 0;
+}
+
 .trailer-dialog {
 	background: none;
 	box-shadow: none;
+}
+
+.now-playing-list {
+	padding: 2rem;
+	background: #444;
+	grid-template-columns: repeat(auto-fill, minmax(270px, 35vw));
+	grid-gap: 1.3em;
+	justify-content: center;
+}
+
+@media(max-width: 800px) {
+	.now-playing-list {
+		grid-template-columns: 100%;
+	}
 }

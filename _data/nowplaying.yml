@@ -1,5 +1,5 @@
 - title: 'Avengers: Infinity War'
-  poster: 'https://i.imgur.com/VwlHRaR.png'
+  poster: 'https://i.imgur.com/reO2BKi.png'
   trailer: 'QwievZ1Tx-8'
   genre: action
   releaseDate: 2018-04-27
@@ -14,9 +14,26 @@
     - Chris Evans
     - Chris Hemsworth
   showtimes:
-    - '9:00'
-    - '11:00'
-    - '13:00'
-    - '15:00'
-    - '17:00'
-    - '19:00'
+    - start: '2018-05-11 15:00'
+      end: '2018-05-11 17:20'
+    - start: '2018-05-11 17:30'
+      end: '2018-05-11 19:50'
+    - start: '2018-05-11 20:00'
+      end: '2018-05-11 22:20'
+- title: 'Life of the Party'
+  poster: 'https://i.imgur.com/8xYZJ2j.png'
+  trailer: 'T1B1CxmAXLk'
+  genre: comedy
+  releaseDate: 2018-05-11
+  description: 'After her husband abruptly asks for a divorce, a middle-aged mother returns to college in order to complete her degree.'
+  directors:
+    -  Ben Falcone
+  actors:
+    -  Melissa McCarthy
+    - Gillian Jacobs
+    - Debby Ryan
+  showtimes:
+    - start: '2018-05-11 15:30'
+      end: '2018-05-11 17:15'
+    - start: '2018-05-11 16:00'
+      end: '2018-05-11 19:45'

@@ -1,3 +1,7 @@
+body > header {
+	padding-bottom: 1.3rem;
+}
+
 header .font-title {
 	font-weight: normal;
 }

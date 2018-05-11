@@ -1,43 +1,74 @@
-<div class="card shadow inline-block now-playing" itemtype="http://schema.org/Movie" itemscope="">
-	<h2 itemprop="name">{{ include.movie.title }}</h2>
-	<meta itemprop="genre" content="{{ include.movie.genre }}" />
-	<figure class="poster-image" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
-		{% include imgur.html url=include.movie.poster sizes='(min-width: 600px) 30vw, 100vw' itemprop='url' %}
-	</figure>
-	<button type="button" data-show-trailer="{{ include.movie.trailer }}">
-		{% include icon.html icon='video' %}
-		<span>Watch Trailer</span>
-	</button>
-	<div class="release-date">
-		<span class="label">Release Date</span>
-		<time datetime="{{ include.movie.releaseDate | date_to_xmlschema }}" itemprop="dateCreated">{{ include.movie.releaseDate | date: '%B %d, %Y' }}</time>
+<div class="card shadow inline-block now-playing" itemtype="http://schema.org/ScreeningEvent" itemscope="">
+	<meta itemprop="name" content="{{ include.movie.title }}" />
+	<div itemprop="workPresented" itemtype="http://schema.org/Movie" itemscope="">
+		<h2 itemprop="name">{{ include.movie.title }}</h2>
+		<meta itemprop="genre" content="{{ include.movie.genre }}" />
+		<figure class="poster-image center" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+			{% include imgur.html url=include.movie.poster sizes='(min-width: 600px) 30vw, 100vw' itemprop='url' %}
+		</figure>
+		<button type="button" data-show-trailer="{{ include.movie.trailer }}">
+			{% include icon.html icon='video' %}
+			<span>Watch Trailer</span>
+		</button>
+		<div class="release-date">
+			<span class="label">Release Date</span>
+			<time datetime="{{ include.movie.releaseDate | date_to_xmlschema }}" itemprop="dateCreated">{{ include.movie.releaseDate | date: '%B %d, %Y' }}</time>
+		</div>
+		<details>
+			<summary role="button">
+				{% include icon.html icon='avatar-default' %}
+				Directors
+			</summary>
+			<ul class="directors">
+				{% for director in movie.directors %}
+					<li class="director" itemprop="director" itemtype="http://schema.org/Person" itemscope="">
+						<span itemprop="name">{{ director }}</span>
+					</li>
+				{% endfor %}
+			</ul>
+		</details>
+		<details>
+			<summary role="button">
+				{% include icon.html icon='avatar-default' %}
+				Cast
+			</summary>
+			<ul class="cast">
+				{% for actor in movie.actors %}
+					<li itemprop="actor" itemtype="http://schema.org/Person" itemscope="">
+						<span itemprop="name">{{ actor }}</span>
+					</li>
+				{% endfor %}
+			</ul>
+		</details>
 	</div>
 	<details>
-		<summary role="button">Directors</summary>
-		<ul class="directors">
-			{% for director in movie.directors %}
-				<li class="director" itemprop="director" itemtype="http://schema.org/Person" itemscope="">
-					<span itemprop="name">{{ director }}</span>
-				</li>
-			{% endfor %}
-		</ul>
-	</details>
-	<details>
-		<summary role="button">Cast</summary>
-		<ul class="cast">
-			{% for actor in movie.actors %}
-				<li itemprop="actor" itemtype="http://schema.org/Person" itemscope="">
-					<span itemprop="name">{{ actor }}</span>
-				</li>
-			{% endfor %}
-		</ul>
-	</details>
-	<details>
-		<summary role="button">Showtimes</summary>
+		<summary role="button">
+			{% include icon.html icon='recent' %}
+			Showtimes
+		</summary>
 		<ol class="showtime-list">
-			{% for time in include.movie.showtimes %}
-				<li class="showtime"><time>{{ time }}</time></li>
+			{% for showing in include.movie.showtimes %}
+				<li class="showtime">
+					<time itemprop="startDate" datetime="{{ showing.start | date: date_to_xmlschema }}">{{ showing.start | date: '%l:%M %p' }}</time>
+					<span>&mdash;</span>
+					<time itemprop="endDate" datetime="{{ showing.end | date: date_to_xmlschema }}">{{ showing.end | date: '%l:%M %p' }}</time>
+				</li>
 			{% endfor %}
 		</ol>
 	</details>
+	<div itemprop="location" itemtype="http://schema.org/MovieTheater" itemscope="" hidden="">
+		<meta itemprop="name" content="{{ site.data.business.name }}" />
+		<div itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="" hidden="">
+			<meta itemprop="url" content="{{ site.data.business.image.url | absolute_url }}" />
+		</div>
+		<div itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="" hidden="">
+			<meta itemprop="url" content="{{ site.data.business.logo.url | absolute_url }}" />
+		</div>
+		<address itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="" hidden="">
+			<meta itemprop="streetAddress" content="{{ site.data.business.address.streetAddress }}" />
+			<meta itemprop="addressRegion" content="{{ site.data.business.address.addressRegion }}" />
+			<meta itemprop="addressLocality" content="{{ site.data.business.address.addressLocality }}" />
+			<meta itemprop="postalCode" content="{{ site.data.business.address.postalCode }}" />
+		</address>
+	</div>
 </div>
