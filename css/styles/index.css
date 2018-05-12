@@ -41,6 +41,14 @@ figure {
 	justify-content: center;
 }
 
+.directors, .director, .cast, .actor {
+	display: inline-block;
+}
+
+.director:not(:last-of-type)::after, .actor:not(:last-of-type)::after {
+	content: ', ';
+}
+
 .showtime {
 	flex-grow: 1;
 	text-align: center;

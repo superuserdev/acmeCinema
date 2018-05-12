@@ -6,25 +6,27 @@
 	itemtype="{{ page.itemtype | default: 'http://schema.org/WebPage' }}"
 	itemscope=""
 	{% if site.service_worker %}data-service-worker="{{site.service_worker | absolute_url }}"{% endif %}
-	data-support-test="{{ site.feature-detect | join: ','}}"
 	{% if site.google-analytics %}data-google-analytics="{{ site.google-analytics }}"{% endif %}
 	{% if page.ads %}data-ad-sense-id="{{ site.ad-sense }}"{% endif %}
 	{% if page.pageLevelAds %}data-page-level-ads="{{ page.pageLevelAds }}"{% endif %}
 >
 {% include head.html %}
-<body
-	id="top"
-	class="layout-{{ page.layout }} {{ page.body-class | default: 'border-box smooth-scroll font-main color-default background-default' }}"
-	contextmenu="{{ page.contextmenu | default: site.contextmenu }}"
-	{% if page.itemprop and page.itemtype %}
-		itemprop="{{ page.itemprop }}"
-		itemtype="{{ page.itemtype }}"
-		itemscope=""
-	{% endif %}
->
-	{% include header.html %}
-	{{ content }}
-	{% include footer.html %}
-	{% include share-button.html %}
-</body>
+	<body
+		id="top"
+		class="layout-{{ page.layout }} {{ page.body-class | default: 'border-box smooth-scroll font-main color-default background-default' }}"
+		contextmenu="{{ page.contextmenu | default: site.contextmenu }}"
+		{% if page.itemprop and page.itemtype %}
+			itemprop="{{ page.itemprop }}"
+			itemtype="{{ page.itemtype }}"
+			itemscope=""
+		{% endif %}
+	>
+		{% include header.html %}
+		<main>{{ content }}</main>
+		{% include footer.html %}
+		{% include share-button.html %}
+		<a href="{{ page.url | append: '#top' | absolute_url }}" class="round shadow inline-block fixed bottom left" role="button">
+			{% include icon.html icon='top' %}
+		</a>
+	</body>
 </html>

@@ -16,38 +16,42 @@
 				<span class="float-right">{% include icon.html icon='view-more' %}</span>
 			</summary>
 			<div class="release-date">
-				<b class="label">
+				<b>
 					{% include icon.html icon='calendar' %}
-					<span>Release Date</span>
+					<span class="label">Release Date</span>
 					<time datetime="{{ include.movie.releaseDate | date_to_xmlschema }}" itemprop="dateCreated">
 						{{ include.movie.releaseDate | date: '%B %d, %Y' }}
 					</time>
 				</b>
 			</div>
 			<hr />
-			<h4>
-				{% include icon.html icon='avatar-default' %}
-				Directors
-			</h4>
-			<ul class="directors">
-				{% for director in movie.directors %}
-				<li class="director" itemprop="director" itemtype="http://schema.org/Person" itemscope="">
-					<span itemprop="name">{{ director }}</span>
-				</li>
-				{% endfor %}
-			</ul>
+			<div class="clearfix card shadow">
+				<b class="label inline-block">
+					{% include icon.html icon='avatar-default' %}
+					<span>Directed by</span>
+				</b>
+				<ul class="directors">
+					{% for director in movie.directors %}
+					<li class="director" itemprop="director" itemtype="http://schema.org/Person" itemscope="">
+						<span itemprop="name">{{ director }}</span>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 			<hr />
-			<h4>
-				{% include icon.html icon='avatar-default' %}
-				Cast
-			</h4>
-			<ul class="cast">
-				{% for actor in movie.actors %}
-				<li itemprop="actor" itemtype="http://schema.org/Person" itemscope="">
-					<span itemprop="name">{{ actor }}</span>
-				</li>
-				{% endfor %}
-			</ul>
+			<div class="clearfix card shadow">
+				<b class="label inline-block">
+					{% include icon.html icon='avatar-default' %}
+					<span>Cast</span>
+				</b>
+				<ul class="cast">
+					{% for actor in movie.actors %}
+					<li class="actor" itemprop="actor" itemtype="http://schema.org/Person" itemscope="">
+						<span itemprop="name">{{ actor }}</span>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 			<hr />
 		</div>
 		</details>
