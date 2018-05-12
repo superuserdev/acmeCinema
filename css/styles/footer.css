@@ -1,5 +1,7 @@
 body > footer {
 	background: #333;
+	padding: 2rem;
+	font-size: 1.3rem;
 }
 
 body > footer a {
