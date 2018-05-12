@@ -34,11 +34,6 @@
 				{% include icon.html icon='web-browser' class=icon-class %}
 			</a>
 			{% endif %}
-			{% if author.sameAs.github %}
-				<a itemprop="sameAs" href="https://github.com/{{ author.github }}" rel="external noopener" title="GitHub" class="no-text-decoration">
-					{% include icon.html icon='mark-github' class=icon-class %}
-				</a>
-			{% endif %}
 			{% if author.sameAs.twitter %}
 			<a itemprop="sameAs" href="https://twitter.com/{{ author.twitter }}" rel="external noopener" title="Twitter" class="no-text-decoration">
 				{% include icon.html icon='twitter' class=icon-class %}
@@ -59,11 +54,6 @@
 					<svg class="icon {{ include.animation | default: 'jackInTheBox' }} animation-speed-normal animation-ease-out">
 						<use xlink:href="{{ site.icons | absolute_url | append: '#youtube' }}" />
 					</svg>
-				</a>
-			{% endif %}
-			{% if author.sameAs.stackoverflow %}
-				<a itemprop="sameAs" href="https://stackoverflow.com/users/{{ author.stackoverflow }}" rel="noopener external" title="YouTube" class="no-text-decoration">
-					{% include icon.html icon='stackoverflow' class=icon-class %}
 				</a>
 			{% endif %}
 			{% if author.sameAs.reddit %}

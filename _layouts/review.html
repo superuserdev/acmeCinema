@@ -22,7 +22,7 @@
 		{% endif %}
 	>
 		{% include header.html %}
-		<main class="card shadow">{{ content }}</main>
+		<main class="card shadow">{% include review.html %}</main>
 		{% include footer.html %}
 		{% include share-button.html %}
 		<a href="{{ page.url | append: '#top' | absolute_url }}" class="round shadow inline-block fixed bottom left" role="button">

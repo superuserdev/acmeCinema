@@ -124,7 +124,7 @@ defaults:
   values:
     layout: post
     author: Chris Zuber
-    permalink: /posts/:categories/:year/:month/:day/:title/
+    permalink: /:categories/:title/
     comments: true
     ads: false
     index: true
@@ -133,7 +133,7 @@ defaults:
   values:
     layout: post
     author: Chris Zuber
-    permalink: /posts/:categories/:year/:month/:day/:title/
+    permalink: /:categories/:title/
     comments: false
     ads: false
 plugins:

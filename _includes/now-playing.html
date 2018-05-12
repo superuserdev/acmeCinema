@@ -8,8 +8,14 @@
 		</figure>
 		<button type="button" data-show-trailer="{{ include.movie.trailer }}">
 			{% include icon.html icon='video' %}
-			<span>Watch Trailer</span>
+			<span class="label">Watch Trailer</span>
 		</button>
+		{% if movie.review %}
+			<a role="button" href="{{ movie.review }}">
+				{% include icon.html icon='documents' %}
+				<span class="label">Read Review</span>
+			</a>
+		{% endif %}
 		<details>
 			<summary role="button" class="block clearfix">
 				<span>More Info</span>
