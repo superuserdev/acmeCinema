@@ -6,16 +6,18 @@
 		<figure class="poster-image center cursor-pointer" data-show-trailer="{{ include.movie.trailer }}" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
 			{% include imgur.html url=include.movie.poster sizes='(min-width: 600px) 30vw, 100vw' itemprop='url' %}
 		</figure>
-		<button type="button" data-show-trailer="{{ include.movie.trailer }}">
-			{% include icon.html icon='video' %}
-			<span class="label">Watch Trailer</span>
-		</button>
-		{% if movie.review %}
-			<a role="button" href="{{ movie.review }}">
-				{% include icon.html icon='documents' %}
-				<span class="label">Read Review</span>
-			</a>
-		{% endif %}
+		<div class="now-playing-actions flex row">
+			<button type="button" data-show-trailer="{{ include.movie.trailer }}">
+				{% include icon.html icon='video' %}
+				<span class="label">Watch Trailer</span>
+			</button>
+			{% if movie.review %}
+				<a role="button" href="{{ movie.review }}">
+					{% include icon.html icon='documents' %}
+					<span class="label">Read Review</span>
+				</a>
+			{% endif %}
+		</div>
 		<details>
 			<summary role="button" class="block clearfix">
 				<span>More Info</span>

@@ -53,11 +53,19 @@ figure {
 }
 
 .now-playing-list {
-	padding: 2rem;
+	padding: 2rem;http://localhost:4000/reviews/avengers-infinity-war/
 	background: #FAFAFA;
 	grid-template-columns: repeat(auto-fill, minmax(270px, 35vw));
 	grid-gap: 1.3em;
 	justify-content: center;
+}
+
+.now-playing-list a[role="button"], .now-playing-list a[role="button"]:hover {
+	color: var(--alt-color);
+}
+
+.now-playing-actions > * {
+	flex-grow: 1;
 }
 
 .directors, .director, .cast, .actor {
