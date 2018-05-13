@@ -6,13 +6,7 @@ header .font-title {
 	font-weight: normal;
 }
 
-header .site-title {
-	margin-left: 1.3em;
-}
-
 header .contact-info {
-	margin-right: 1.2em;
-	margin-top: 0.8em;
 	line-height: 1.8em;
 }
 
@@ -23,4 +17,17 @@ header .logo {
 
 header:hover .logo {
 	transform: rotate(1turn) scale(1.3);
+}
+
+@media (min-width: 800px) {
+	header .site-title {
+		float: left;
+		margin-left: 1.3em;
+	}
+	
+	header .contact-info {
+		float: right;
+		margin-right: 1.2em;
+		margin-top: 0.8em;
+	}
 }

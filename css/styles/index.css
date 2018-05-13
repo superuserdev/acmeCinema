@@ -89,6 +89,12 @@ figure {
         height: 1.2em;
 }
 
+@media (min-width: 600px) {
+	.movie-reviewed {
+		float: left;
+	}
+}
+
 .showtime {
 	flex-grow: 1;
 	text-align: center;

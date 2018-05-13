@@ -84,14 +84,14 @@
 		</details>
 	</header>
 	{% if page.subheading %}{% include subheading.html subheading=page.subheading %}{% endif %}
-	<div class="flex row">
-		<section class="float-left" itemprop="itemReviewed" itemtype="http://schema.org/Movie" itemscope="">
+	<div class="movie-review">
+		<section class="movie-reviewed center" itemprop="itemReviewed" itemtype="http://schema.org/Movie" itemscope="">
 			<meta itemprop="name" content="Avengers: Infinity War" />
 			<figure itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
-				{% include imgur.html url='https://imgur.com/reO2BKi' itemprop='url' %}
+				{% include imgur.html url='https://imgur.com/reO2BKi' itemprop='url' sizes='(max-width: 600px) 100vw, 25vw' %}
 			</figure>
 		</section>
-		<section class="float-left" itemprop="reviewBody" class="optimize-legibility">{{ content }}</section>
+		<section class="movie-review-body" itemprop="reviewBody" class="optimize-legibility">{{ content }}</section>
 	</div>
 	<footer class="clearfix relative">
 		{% if page.ads and site.ad-sense %}{% include ad.html %}{% endif %}
