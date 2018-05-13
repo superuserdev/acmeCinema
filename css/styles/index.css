@@ -12,6 +12,10 @@
 @import url("./header.css");
 @import url("./footer.css");
 
+body {
+	background: #444;
+}
+
 dialog {
 	border: none;
 }

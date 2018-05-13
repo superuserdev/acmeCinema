@@ -1,17 +1,26 @@
 body > header {
-	padding-bottom: 1.3rem;
+	padding-bottom: 0.3rem;
 }
 
 header .font-title {
 	font-weight: normal;
 }
 
+header .site-title {
+	margin-left: 1.3em;
+}
+
+header .contact-info {
+	margin-right: 1.2em;
+	margin-top: 0.8em;
+	line-height: 1.8em;
+}
+
 header .logo {
-	width: 25%;
-	transition: transform 400ms ease-in-out;
-	filter: drop-shadow(0.5em 0.5em 0.1em rgba(0,0,0,0.7));
+	width: 1em;
+	transition: transform 800ms ease-in-out;
 }
 
 header:hover .logo {
-	transform: rotate(20deg);
+	transform: rotate(1turn) scale(1.3);
 }

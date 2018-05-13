@@ -1,10 +1,22 @@
-<header id="about" class="center background-accent background-fixed background-no-repeat overflow-hidden background-cover color-alt optimize-speed transition-speed-slow" role="banner">
-	<h1 class="font-title center tada animation-speed-normal animation-ease-in">
-		<a href="{{ site.url | default: '/' | absolute_url}}" class="inline-block color-inherit">
+<header id="about" class="clearfix background-accent background-fixed background-no-repeat overflow-hidden background-cover color-alt optimize-speed transition-speed-slow" role="banner">
+	<h1 class="font-title tada animation-speed-normal animation-ease-in float-left site-title">
+		<a href="{{ site.url | default: '/' | absolute_url}}" class="color-inherit">
+			<!-- <img class="logo" src="{{ site.data.business.logo.url | absolute_url }}" alt="Logo" /> -->
+			{% include icon.html icon='film-star' %}
 			{{ site.title }}
+			{% include icon.html icon='film-star' %}
+			<!-- <img class="logo" src="{{ site.data.business.logo.url | absolute_url }}" alt="Logo" /> -->
 		</a>
 	</h1>
-	<a href="{{ site.url | default: '/' | absolute_url}}">
-		<img class="logo" src="{{ site.data.business.logo.url | absolute_url }}" alt="Logo" />
-	</a>
+	<div class="float-right contact-info">
+			<a href="tel:{{ site.data.business.telephone }}" class="color-inherit">
+				{% include icon.html icon='call-start' %}
+				{{ site.data.business.telephone | replace: '+', '' }}
+			</a>
+			<br />
+			<a href="tel:{{ site.data.business.email }}" class="color-inherit">
+				{% include icon.html icon='mail-unread' %}
+				{{ site.data.business.email }}
+			</a>
+		</div>
 </header>
