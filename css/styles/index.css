@@ -53,7 +53,7 @@ figure {
 }
 
 .now-playing-list {
-	padding: 2rem;http://localhost:4000/reviews/avengers-infinity-war/
+	padding: 2rem;
 	background: #FAFAFA;
 	grid-template-columns: repeat(auto-fill, minmax(270px, 35vw));
 	grid-gap: 1.3em;
