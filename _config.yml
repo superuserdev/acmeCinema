@@ -39,7 +39,7 @@ feed:
 icons: '/img/icons.svg'
 theme-color: '#ac2a34'
 background-color: '#ac2a34'
-# discus-identifier:
+discus-identifier: acmecinema
 # google-analytics:
 # ad-sense:
 #webmaster-verifications:
