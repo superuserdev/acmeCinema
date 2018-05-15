@@ -10,14 +10,28 @@
 		{% elsif page.image %}
 			<meta itemprop="image" content="{{ page.image | absolute_url }}" />
 		{% endif %}
-		{% if page.description %}
-			<meta itemprop="description" content="{{ page.description }}" />
-		{% endif %}
+		<meta itemprop="description" content="{{ page.description | default: site.description }}" />
 		{% if page.tags %}
 			<meta itemprop="keywords" content="{{ page.tags | join: ', '}}" />
 		{% endif %}
 		<meta itemptop="wordCount" content="{{ content | number_of_words }}" />
 		<meta itemprop="url" content="{{ page.url | absolute_url }}" />
+		<div itemprop="publisher" itemtype="http://schema.org/MovieTheater" itemscope="">
+			<meta itemprop="name" content="{{ site.data.business.name }}" />
+			<meta itemprop="telephone" content="{{ site.data.business.telephone }}" />
+			<meta itemprop="email" content="{{ site.data.business.email }}" />
+			<meta itemprop="url" content="{{ site.data.business.url | absolute_url | default: site.url }}" />
+			<meta itemprop="priceRange" content="{{ site.data.business.priceRange }}" />
+			<div itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+				<meta itemprop="url" content="{{ site.data.business.logo.url | absolute_url }}" />
+			</div>
+			<div itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="" hidden="">
+				<meta itemprop="streetAddress" content="{{ site.data.business.address.streetAddress }}" />
+				<meta itemprop="addressRegion" content="{{ site.data.business.address.addressRegion }}" />
+				<meta itemprop="addressLocality" content="{{ site.data.business.address.addressLocality }}" />
+				<meta itemprop="postalCode" conent="{{ site.data.business.address.postalCode }}" />
+			</div>
+		</div>
 		<details>
 			<summary class="block">
 				<h1 class="inline-block">
@@ -64,34 +78,36 @@
 				{% else %}
 					<meta itemprop="dateModified" content="{{ page.date | date: data_to_xmlschema }}" />
 				{% endif %}
-				{% if site.data.publisher %}
-					{% assign publisher = site.data.publisher %}
-					<div itemprop="publisher" itemtype="{{ publisher['@context'] | default: 'http://schema.org' }}/{{ publisher['@type'] | default: 'Organization' }}" itemscope="" hidden="">
-						<meta itemprop="name" content="{{ publisher.name }}" />
-						{% if publisher.url %}<meta itemprop="url" content="{{ publisher.url }}" />{% endif %}
-						{% if publisher.email %}<meta itemprop="email" content="{{ publisher.email }}" />{% endif %}
-						{% if publisher.logo %}
-							<div itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
-								<meta itemprop="url" content="{{ publisher.logo.url | absolute_url }}" />
-							</div>
-						{% endif %}
-						{% if publisher.sameAs %}{% for link in publisher.sameAs %}
-							<meta itemprop="sameAs" content="{{ link }}" />
-						{% endfor %}{% endif %}
-					</div>
-				{% endif %}
 			</div>
 		</details>
 	</header>
 	{% if page.subheading %}{% include subheading.html subheading=page.subheading %}{% endif %}
 	<div class="movie-review">
+		{% assign movie = site.data.nowplaying | where: 'review', page.url | first %}
 		<section class="movie-reviewed center" itemprop="itemReviewed" itemtype="http://schema.org/Movie" itemscope="">
-			<meta itemprop="name" content="Avengers: Infinity War" />
+			<div hidden="">
+				<meta itemprop="name" content="{{ movie.title }}" />
+				<meta itemprop="description" content="{{ movie.description }}" />
+				<meta itemprop="sameAs" content="{{ '/#' | absolute_url | append: movie.title | slugify }}" />
+				<meta itemprop="dateCreated" content="{{ movie.releaseDate | date: data_to_xmlschema }}" />
+				{% for director in movie.directors %}
+					<div itemprop="director" itemtype="http://schema.org/Person" itemscope="" hidden="">
+						<meta itemprop="name" content="{{ director }}" />
+					</div>
+				{% endfor %}
+				{% for director in movie.actors %}
+					<div itemprop="actor" itemtype="http://schema.org/Person" itemscope="" hidden="">
+						<meta itemprop="name" content="{{ actor }}" />
+					</div>
+				{% endfor %}
+			</div>
 			<figure itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
-				{% include imgur.html url='https://imgur.com/reO2BKi' itemprop='url' sizes='(max-width: 600px) 100vw, 25vw' %}
+				{% include imgur.html url=movie.poster itemprop='url' sizes='(max-width: 450px) 100vw, (max-width: 650px) 35vw, 25vw' %}
 			</figure>
 		</section>
-		<section class="movie-review-body" itemprop="reviewBody" class="optimize-legibility">{{ content }}</section>
+		<section class="movie-review-body" itemprop="reviewBody" class="optimize-legibility">
+			{{ content }}
+		</section>
 	</div>
 	<footer class="clearfix relative">
 		{% if page.ads and site.ad-sense %}{% include ad.html %}{% endif %}
