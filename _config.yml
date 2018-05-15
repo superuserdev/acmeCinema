@@ -75,6 +75,8 @@ stylesheets:
     media: all
   - href: /css/styles/index.min.css
     media: all
+dns_prefetch:
+  - 'https://www.youtube-nocookie.com'
 preload:
 - href: /img/icons.svg
   as: image
