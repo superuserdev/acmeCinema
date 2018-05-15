@@ -8,8 +8,10 @@
 		</figure>
 		<div class="now-playing-actions flex row">
 			<button type="button" data-show-trailer="{{ include.movie.trailer }}">
-				{% include icon.html icon='video' %}
-				<span class="label">Watch Trailer</span>
+				<div class="float-left">
+					{% include icon.html icon='video' %}
+					<span class="label">Watch Trailer</span>
+				</div>
 			</button>
 			{% if movie.review %}
 				<a role="button" href="{{ movie.review }}">

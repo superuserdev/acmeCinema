@@ -2,7 +2,7 @@
 	{% include breadcrumb-nav.html category=page.category post=page %}
 </span>
 <article class="font-article" itemtype="http://schema.org/Review" itemscope="" role="article" >
-	<header class="article-meta background-accent color-alt sticky-desktop top shadow-dark">
+	<header class="article-meta background-accent color-alt sticky-desktop top shadow-dark z-4">
 		{% if page.tags %}<meta itemprop="keywords" content="{{ page.tags | join: ', '}}" />{% endif %}
 		{% if page.imgur %}
 			{% capture hash %}{{ include.url | replace: 'https://i.imgur.com/', '' | replace: 'https://imgur.com/', '' | replace: '.png', '' | replace: '.jpg', '' }}{% endcapture %}
