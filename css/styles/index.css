@@ -60,7 +60,11 @@ figure {
 	justify-content: center;
 }
 
-.now-playing-list a[role="button"], .now-playing-list a[role="button"]:hover {
+.now-playing {
+	background: linear-gradient(#fefefe, #eee, #fefefe);
+}
+
+.now-playing a[role="button"], .now-playing a[role="button"]:hover {
 	color: var(--alt-color);
 }
 
