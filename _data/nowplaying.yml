@@ -1,5 +1,5 @@
 - title: 'Avengers: Infinity War'
-  poster: 'https://i.imgur.com/reO2BKi.png'
+  poster: 'https://imgur.com/reO2BKi'
   publisher: 'Disney'
   trailer: 'QwievZ1Tx-8'
   genre: action
@@ -23,7 +23,7 @@
     - start: '2018-05-11 20:00'
       end: '2018-05-11 22:20'
 - title: 'Life of the Party'
-  poster: 'https://i.imgur.com/8xYZJ2j.png'
+  poster: 'https://imgur.com/8xYZJ2j'
   trailer: 'T1B1CxmAXLk'
   genre: comedy
   releaseDate: 2018-05-11

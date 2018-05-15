@@ -1,7 +1,15 @@
 ---
 title: 'Avengers: Infinity War'
 category: reviews
+tags:
+- marvel
+- disney
+- avengers
+- infinity war
+description: Lorem ipsum dolor sit amet
 layout: review
+date: '2018-05-10 13:52'
+imgur: 'https://imgur.com/reO2BKi'
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
