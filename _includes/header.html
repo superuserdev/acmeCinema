@@ -1,10 +1,10 @@
 <header id="about" class="clearfix background-accent background-fixed background-no-repeat overflow-hidden background-cover color-alt optimize-speed transition-speed-slow" role="banner">
 	<h1 class="font-title center tada animation-speed-normal animation-ease-in site-title">
-		<a href="{{ site.url | default: '/' | absolute_url}}" class="color-inherit">
+		{% if page.url != '/' %}<a href="{{ site.url | default: '/' | absolute_url}}" class="color-inherit">{% endif %}
 			{% include icon.html icon='film-star' %}
 			{{ site.title }}
 			{% include icon.html icon='film-star' %}
-		</a>
+		{% if page.url != '/' %}</a>{% endif %}
 	</h1>
 	<div class="contact-info center">
 			<a href="tel:{{ site.data.business.telephone }}" class="color-inherit">
