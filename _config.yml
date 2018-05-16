@@ -1,6 +1,7 @@
 author: Chris Zuber
 title: Acme Cinema
 url: 'https://acmecinema.netlify.com'
+timezone: America/Los_Angeles
 markdown: kramdown
 version: 1.0.0
 lang: en
