@@ -46,6 +46,14 @@
 				</li>
 			{% endif %}
 		</ul>
+		<div class="footer-col">
+			<div class="clearfix">
+				<span class="float-left">{% include icon.html icon='location' %}</span>
+				<div class="float-left">
+					{% include address.html address = site.data.business.address %}
+				</div>
+			</div>
+		</div>
 		<ul class="footer-col">
 			{% if site.data.social.facebook %}
 				<li class="social-link">

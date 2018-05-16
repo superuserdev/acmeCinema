@@ -1,0 +1,70 @@
+---
+title: About
+layout: default
+permalink: /about/
+tags:
+- acme cinema
+- theater
+- about
+description: About Acme Cinema
+imgur: 'https://imgur.com/4IxXwhP'
+ads: false
+comments: false
+---
+<div itemtype="http://schema.org/MovieTheater" itemscope="">
+	<meta itemprop="priceRange" content="{{ site.data.business.priceRange }}" />
+	<h1 itemprop="name">{{ site.data.business.name }}</h1>
+	<section id="about-content" class="clearfix">
+		<figure class="float-left" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+			{% include imgur.html url=site.data.business.image.url sizes='(min-width: 600px) 40vw, 100vw' itemprop='url' %}
+		</figure>
+		<p class="card">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+			irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+			pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+			deserunt mollit anim id est laborum.
+		</p>
+		<figure>
+			{% include imgur.html url='https://imgur.com/5VWqHOV' sizes='(min-width: 600px) 20vw, 100vw' %}
+		</figure>
+	</section>
+	<section id="contact-info" class="card">
+		<div>
+			<span class="float-left">{% include icon.html icon='location' %}</span>
+			{% include address.html address=site.data.business.address itemprop='address' %}
+		</div>
+		<a itemprop="url" href="{{ site.data.business.url | default: site.url }}" class="block">
+			{% include icon.html icon='web-browser' %}
+			<span>{{ site.data.business.url | default: site.url | replace: 'https://', '' | replace: 'http://', '' }}</span>
+		</a>
+		<a itemprop="telephone" href="tel:{{ site.data.business.telephone }}" content="{{ site.data.business.telephone | replace: '+', '' }}" class="block">
+			{% include icon.html icon='call-start' %}
+			<span>{{ site.data.business.telephone | replace: '+', '' }}</span>
+		</a>
+		<a itemprop="email" href="mailto:{{ site.data.business.email }}" class="block">
+			{% include icon.html icon='mail-unread' %}
+			<span>{{ site.data.business.email }}</span>
+		</a>
+	</section>
+	<h2 class="center">Meet Our Staff</h2><hr />
+	<section class="employees grid overflow-x-auto">
+		{% for employee in site.data.staff %}
+			<div class="card shadow employee" id="{{ employee.name | slugify | prepend: 'employee-' }}"  itemprop="employee" itemtype="http://schema.org/Person" itemscope="">
+				<h3 class="employee-name center">
+					{% include icon.html icon='avatar-default' %}
+					<span itemprop="name">{{ employee.name }}</span>
+					<span>|</span>
+					<span itemprop="jobTitle">{{employee.jobTitle }}</span>
+				</h3>
+				<div class="flex row">
+					<figure itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+						{% include gravatar.html gravatar=employee.gravatar sizes='40vw' itemprop='url' %}
+					</figure>
+					<blockquote itemprop="description">{{ employee.description }}</blockquote>
+				</div>
+			</div>
+		{% endfor %}
+	</section>
+</div>

@@ -11,6 +11,7 @@ address:
   addressLocality: Nowhere
   addressRegion: California
   postalCode: 98765
+  url: 'https://goo.gl/maps/dsjG748JDS82'
 contactPoint:
   '@type': ContactPoint
   contactType: Customer Service
@@ -20,7 +21,7 @@ sameAs:
   - 'https://facebook.com/theacmecinema'
 image:
   '@type': ImageObject
-  url: 'http://funds.gfmcdn.com/18567838_14883315660_r.jpg'
+  url: 'https://i.imgur.com/4IxXwhP.png'
 logo:
   '@type': ImageObject
   url: /img/clipart/film-star.svg

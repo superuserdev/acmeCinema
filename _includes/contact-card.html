@@ -1,6 +1,8 @@
 <div class="card shadow clearfix" itemtype="{{ include.info['@context'] | append: '/' | append: include.info['@type'] }}" itemscope="">
-	<img itemprop="image" class="inline-block" src="{{ include.info.logo.url | absolute_url }}" alt="logo" style="width: 50%" />
-	<div class="inline-block" style="50%">
+	<figure class="inline-block float-left" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+		{% include imgur.html url=include.info.image.url itemprop='image' sizes='45vw' %}
+	</figure>
+	<div class="inline-block float-left">
 		<div itemprop="name">{{ include.info.name }}</div>
 		<a href="{{ include.info.telephone | prefix: 'tel:' }}" class="block">
 			{% include icon.html icon='call-start' %}
@@ -14,19 +16,12 @@
 			{% include icon.html icon='web-browser' %}
 			<span itemprop="telephone">{{ include.info.url | replace: 'http://', '' | replace: 'https://', '' }}</span>
 		</a>
-		<address itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="">
-			<div itemprop="streetAddress">{{ include.info.address.streetAddress }}</div>
-			<div>
-				<div class="clearfix">
-					<span class="float-left">{% include icon.html icon='location' %}</span>
-					<div class="float-left">
-						<span itemprop="addressLocality">{{ include.info.address.addressLocality }}</span>,
-						<span itemprop="addressRegion">{{ include.info.address.addressRegion }}</span>
-					</div>
-				</div>
+		{% if include.info.address %}
+			<div class="clearfix">
+				<span class="float-left">{% include icon.html icon='location' %}</span>
+				<div class="float-left">{% include address.html address=include.info.address %}</div>
 			</div>
-		</address>
-		</div>
+		{% endif %}
 	</div>
 	<meta itemprop="screenCount" content="{{ include.info.screenCount }}" />
 	<meta itemprop="maximumAttendeeCapacity" content="{{ include.info.maximumAttendeeCapacity }}" />

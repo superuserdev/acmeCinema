@@ -1,0 +1,16 @@
+- name: Joe Itsme
+  jobTitle: Owner
+  gravatar: a58a26c692c9a0c7b0f8571153cf5df8
+  description: |-
+    I like trains
+- name: Chris Zuber
+  jobTitle: Developer
+  gravatar: 43578597e449298f5488c2407c8a8ae5
+  description: |-
+    I write code and poetry. Overall <q>knurd.</q> I know how to exit vim!
+    <br />
+    Full Stack Web Developer and follower of the Unix Philosophy
+- name: Somebody Else
+  jobTitle: Imposter
+  gravatar: ''
+  description: I am not a real person

@@ -9,6 +9,16 @@ body > footer a {
 	color: inherit;
 }
 
+.footer-col {
+	flex-grow: 1;
+	align-self: center;
+	margin-left: 0.75rem;
+}
+
+.footer-col:not(:last-of-type) {
+	border-right: 0.1em solid silver;
+}
+
 .footer-col li {
 	list-style: none;
 }

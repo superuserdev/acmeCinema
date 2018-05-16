@@ -101,6 +101,24 @@ figure {
 	height: 1.2em;
 }
 
+.employees {
+	grid-template-columns: repeat(auto-fill, minmax(270px, 35vw));
+	grid-gap: 1.8rem;
+	justify-content: center;
+}
+
+.employee {
+	padding: 1.2em;
+}
+
+.employee figure {
+	flex: 1 1 40vw;
+}
+
+.employee blockquote {
+	flex: 1 1 60vw;
+}
+
 @media (min-width: 600px) {
 	.movie-reviewed {
 		float: left;
@@ -121,7 +139,7 @@ figure {
 }
 
 @media(max-width: 800px) {
-	.now-playing-list {
+	.now-playing-list, .employees {
 		grid-template-columns: 100%;
 	}
 }
