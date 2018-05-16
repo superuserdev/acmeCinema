@@ -68,7 +68,7 @@
 	<div class="showtime-list">
 		<div class="flex row wrap">
 			{% for showing in include.movie.showtimes %}
-				<span class="showtime">
+				<span class="showtime cursor-pointer">
 					{% include icon.html icon='recent' %}
 					<time itemprop="startDate" datetime="{{ showing.start | date: date_to_xmlschema }}">{{ showing.start | date: '%l:%M %p' }}</time>
 					<span>&mdash;</span>
