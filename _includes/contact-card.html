@@ -4,11 +4,11 @@
 	</figure>
 	<div class="inline-block float-left">
 		<div itemprop="name">{{ include.info.name }}</div>
-		<a href="{{ include.info.telephone | prefix: 'tel:' }}" class="block">
+		<a href="{{ include.info.telephone | prepend: 'tel:' }}" class="block">
 			{% include icon.html icon='call-start' %}
 			<span itemprop="telephone">{{ include.info.telephone | replace: '+', '' }}</span>
 		</a>
-		<a href="{{ include.info.email | prefix: 'mailto:' }}" class="block">
+		<a href="{{ include.info.email | prepend: 'mailto:' }}" class="block">
 			{% include icon.html icon='mail-unread' %}
 			<span itemprop="telephone">{{ include.info.email }}</span>
 		</a>
