@@ -1,11 +1,11 @@
 <div id="{{ include.movie.title | slugify }}" class="card shadow inline-block now-playing" itemtype="http://schema.org/ScreeningEvent" itemscope="">
 	<meta itemprop="name" content="{{ include.movie.title }}" />
 	<div itemprop="workPresented" itemtype="http://schema.org/Movie" itemscope="">
-		<h2 itemprop="name" class="movie-title center">{{ include.movie.title }}</h2>
 		<meta itemprop="genre" content="{{ include.movie.genre }}" />
 		<figure class="poster-image center cursor-pointer" data-show-trailer="{{ include.movie.trailer }}" itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
 			{% include imgur.html url=include.movie.poster sizes='(min-width: 600px) 30vw, 100vw' itemprop='url' %}
 		</figure>
+		<h2 itemprop="name" class="movie-title center">{{ include.movie.title }}</h2>
 		<div class="now-playing-actions flex row">
 			<button type="button" data-show-trailer="{{ include.movie.trailer }}">
 				<div class="float-left">
