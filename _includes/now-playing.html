@@ -14,7 +14,7 @@
 				</div>
 			</button>
 			{% if movie.review %}
-				<a role="button" href="{{ movie.review }}">
+				<a role="button" href="{{ movie.review | absolute_url }}">
 					{% include icon.html icon='documents' %}
 					<span class="label">Read Review</span>
 				</a>
