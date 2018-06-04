@@ -13,10 +13,12 @@
 					<span class="label">Watch Trailer</span>
 				</div>
 			</button>
-			<a role="button" href="{{ movie.url | absolute_url }}">
-				{% include icon.html icon='documents' %}
-				<span class="label">Read Review</span>
-			</a>
+			{% if movie.content.size > 10 %}
+				<a role="button" href="{{ movie.url | absolute_url }}">
+					{% include icon.html icon='documents' %}
+					<span class="label">Read Review</span>
+				</a>
+			{% endif %}
 		</div>
 		<details>
 			<summary role="button" class="block clearfix">
