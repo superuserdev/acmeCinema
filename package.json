@@ -33,7 +33,8 @@
     "url": "https://github.com/superuserdev/acmeCinema/issues"
   },
   "homepage": "https://acmecinema.netlify.com/",
-  "dependencies": {
-    "node-purist": "^0.1.0"
+  "dependencies": {},
+  "devDependencies": {
+    "node-purist": "github:shgysk8zer0/node-purist"
   }
 }
