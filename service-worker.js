@@ -27,7 +27,7 @@ const config = {
 		'/img/',
 		'/fonts/',
 		'/posts/',
-		'/resume/',
+		'/movies/,
 		'/contact/',
 	],
 	hosts: [
