@@ -7,3 +7,4 @@
 /js/svg4everybody/
 *.min.js
 *.config.js
+/service-worker.js
