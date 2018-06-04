@@ -3,7 +3,8 @@ title: Home
 layout: default
 ---
 <section class="grid now-playing-list">
-	{% for movie in site.data.nowplaying %}
+	{% assign playing=site.movies | where: 'playing', true %}
+	{% for movie in playing %}
 		{% include now-playing.html movie=movie %}
 	{% endfor %}
 	{% include trailer-template.html %}

@@ -83,26 +83,25 @@
 	</header>
 	{% if page.subheading %}{% include subheading.html subheading=page.subheading %}{% endif %}
 	<div class="movie-review">
-		{% assign movie = site.data.nowplaying | where: 'review', page.url | first %}
 		<section class="movie-reviewed center" itemprop="itemReviewed" itemtype="http://schema.org/Movie" itemscope="">
 			<div hidden="">
-				<meta itemprop="name" content="{{ movie.title }}" />
-				<meta itemprop="description" content="{{ movie.description }}" />
-				<meta itemprop="sameAs" content="{{ '/#' | absolute_url | append: movie.title | slugify }}" />
-				<meta itemprop="dateCreated" content="{{ movie.releaseDate | date: data_to_xmlschema }}" />
-				{% for director in movie.directors %}
+				<meta itemprop="name" content="{{ page.title }}" />
+				<meta itemprop="description" content="{{ page.description }}" />
+				<meta itemprop="sameAs" content="{{ '/#' | absolute_url | append: page.title | slugify }}" />
+				<meta itemprop="dateCreated" content="{{ page.releaseDate | date: data_to_xmlschema }}" />
+				{% for director in page.directors %}
 					<div itemprop="director" itemtype="http://schema.org/Person" itemscope="" hidden="">
 						<meta itemprop="name" content="{{ director }}" />
 					</div>
 				{% endfor %}
-				{% for director in movie.actors %}
+				{% for director in page.actors %}
 					<div itemprop="actor" itemtype="http://schema.org/Person" itemscope="" hidden="">
 						<meta itemprop="name" content="{{ actor }}" />
 					</div>
 				{% endfor %}
 			</div>
 			<figure itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
-				{% include imgur.html url=movie.poster itemprop='url' sizes='(max-width: 450px) 100vw, (max-width: 650px) 35vw, 25vw' %}
+				{% include imgur.html url=page.poster itemprop='url' sizes='(max-width: 450px) 100vw, (max-width: 650px) 35vw, 25vw' %}
 			</figure>
 		</section>
 		<section class="movie-review-body" itemprop="reviewBody" class="optimize-legibility">

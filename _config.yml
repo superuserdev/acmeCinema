@@ -139,9 +139,23 @@ defaults:
     permalink: /:categories/:title/
     comments: false
     ads: false
+- scope:
+    path: _movies
+  values:
+    layout: review
+    comments: true
+    ads: false
+    index: true
+collections:
+  movies:
+    output: true
+    permalink: /:collection/:name/
 plugins:
 - jekyll-watch
 - jekyll-paginate
+include:
+- _headers
+- _redirects
 exclude:
 - "*.rb"
 - "*.gemspec"

@@ -13,12 +13,10 @@
 					<span class="label">Watch Trailer</span>
 				</div>
 			</button>
-			{% if movie.review %}
-				<a role="button" href="{{ movie.review | absolute_url }}">
-					{% include icon.html icon='documents' %}
-					<span class="label">Read Review</span>
-				</a>
-			{% endif %}
+			<a role="button" href="{{ movie.url | absolute_url }}">
+				{% include icon.html icon='documents' %}
+				<span class="label">Read Review</span>
+			</a>
 		</div>
 		<details>
 			<summary role="button" class="block clearfix">
@@ -77,6 +75,10 @@
 			{% endfor %}
 		</div>
 	</div>
+	<details>
+		<summary role="button">JSON</summary>
+		<pre><code>{{ movie | jsonify }}</code></pre>
+	</details>
 	<div itemprop="location" itemtype="http://schema.org/MovieTheater" itemscope="" hidden="">
 		<meta itemprop="name" content="{{ site.data.business.name }}" />
 		<div itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="" hidden="">
